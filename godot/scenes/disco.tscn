@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://ci8wn8u3mm5sn"]
+
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="1_4aem0"]
+[ext_resource type="PackedScene" uid="uid://dvppubnxnj884" path="res://scenes/darkness.tscn" id="1_yv0tc"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="2_pvq1w"]
+[ext_resource type="PackedScene" uid="uid://c26pg5a1hbtka" path="res://scenes/light.tscn" id="4_de6fg"]
+[ext_resource type="PackedScene" uid="uid://ctt2bhg5mp27a" path="res://scenes/actual_light.tscn" id="5_s6yv7"]
+[ext_resource type="PackedScene" uid="uid://cqstuok25f6l" path="res://scenes/guard.tscn" id="6_3v4ev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crt71"]
+size = Vector2(320, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csluw"]
+size = Vector2(192, 88)
+
+[node name="Disco" type="Node2D"]
+
+[node name="Darkness" parent="." instance=ExtResource("1_yv0tc")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -705.0
+offset_top = -489.0
+offset_right = 719.0
+offset_bottom = 455.0
+color = Color(0.364706, 0.388235, 0.541176, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+offset_left = -160.0
+offset_right = 160.0
+offset_bottom = 128.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_crt71")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(128, -88)
+
+[node name="ColorRect" type="ColorRect" parent="Wall"]
+offset_left = -288.0
+offset_top = -64.0
+offset_right = -96.0
+offset_bottom = 24.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-192, -20)
+shape = SubResource("RectangleShape2D_csluw")
+
+[node name="Player" parent="." instance=ExtResource("1_4aem0")]
+position = Vector2(32, 0)
+disco_level = true
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_pvq1w")]
+target = NodePath("../Player")
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Light" parent="Lights" node_paths=PackedStringArray("collision_polygon") instance=ExtResource("4_de6fg")]
+collision_polygon = NodePath("CollisionPolygon2D")
+do_timer = true
+time_off = 3.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lights/Light"]
+polygon = PackedVector2Array(-96, -64, -32, -64, 0, 0, -128, 0)
+
+[node name="ActualLight" parent="Lights/Light" instance=ExtResource("5_s6yv7")]
+
+[node name="Light2" parent="Lights" node_paths=PackedStringArray("collision_polygon") instance=ExtResource("4_de6fg")]
+position = Vector2(96, -32)
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lights/Light2"]
+polygon = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+
+[node name="ActualLight" parent="Lights/Light2" instance=ExtResource("5_s6yv7")]
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(1, 1)
+
+[node name="Guard" parent="." instance=ExtResource("6_3v4ev")]
+position = Vector2(-144, 0)

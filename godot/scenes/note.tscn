@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdmk2apchhjkq"]
+
+[ext_resource type="Script" path="res://scripts/note.gd" id="1_5vxfl"]
+[ext_resource type="Texture2D" uid="uid://dfqgwlcqvvaee" path="res://images/note.png" id="2_5daqe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hc7nf"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_nddki"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -12)]
+}
+
+[sub_resource type="Animation" id="Animation_7vogh"]
+resource_name = "bob"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -12), Vector2(0, -16), Vector2(0, -12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn3qq"]
+_data = {
+"RESET": SubResource("Animation_nddki"),
+"bob": SubResource("Animation_7vogh")
+}
+
+[node name="Note" type="Area2D"]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_5vxfl")
+text = "Hello, world!"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hc7nf")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("2_5daqe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qn3qq")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -44.0
+offset_right = 47.0
+offset_bottom = -17.0
+text = "Z"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

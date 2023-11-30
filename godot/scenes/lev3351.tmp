@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://c32oj3wqxpy0o"]
+
+[ext_resource type="Texture2D" uid="uid://cyd2qgf0nbpar" path="res://6_.png" id="1_rwryd"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="2_jyxjg"]
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="3_prvmj"]
+[ext_resource type="PackedScene" uid="uid://c1a4n57ue4uy4" path="res://scenes/ladder.tscn" id="4_cnjr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb4ic"]
+size = Vector2(16, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6u7j"]
+size = Vector2(16, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdg0j"]
+size = Vector2(16, 80)
+
+[node name="Level6" type="Node2D"]
+
+[node name="Level6" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_rwryd")
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_jyxjg")]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 320
+target = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("3_prvmj")]
+position = Vector2(392, 284)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(480, 320, 480, 284, 204, 284, 204, 320)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(192, 320, 0, 320, 0, 0, 236, 0, 236, 36, 12, 36, 12, 96, 44, 96, 44, 128, 12, 128, 12, 284, 192, 284)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(252, 36, 248, 36, 248, 0, 480, 0, 480, 64, 468, 64, 468, 36)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(224, 224, 272, 224, 272, 192, 224, 192)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(44, 192, 192, 192, 192, 224, 44, 224)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(372, 224, 480, 224, 480, 128, 348, 128, 348, 160, 468, 160, 468, 192, 372, 192)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(84, 140, 84, 144, 268, 144, 268, 112, 84, 112)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(480, 284, 484, 284, 484, 64, 480, 64)
+
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Ladder" parent="Ladders" instance=ExtResource("4_cnjr5")]
+position = Vector2(28, 176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
+position = Vector2(0, 30)
+shape = SubResource("RectangleShape2D_yb4ic")
+
+[node name="Ladder2" parent="Ladders" instance=ExtResource("4_cnjr5")]
+position = Vector2(56, 132)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_v6u7j")
+
+[node name="Ladder3" parent="Ladders" instance=ExtResource("4_cnjr5")]
+position = Vector2(312, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_rdg0j")

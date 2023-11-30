@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwaturldmkfu7"]
+
+[ext_resource type="Texture2D" uid="uid://bdwnakcv7iesa" path="res://images/page.png" id="1_3o0e2"]
+[ext_resource type="Script" path="res://scripts/note_interface.gd" id="1_tcgtf"]
+[ext_resource type="FontFile" uid="uid://d3378dsjw1koc" path="res://fonts/indie_flower_regular.ttf" id="2_pueqm"]
+
+[node name="NoteInterface" type="CanvasLayer"]
+script = ExtResource("1_tcgtf")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 0.952941, 1)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 896.0
+offset_bottom = 576.0
+texture = ExtResource("1_3o0e2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 332.0
+offset_top = 96.0
+offset_right = 672.0
+offset_bottom = 544.0
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("2_pueqm")
+theme_override_font_sizes/normal_font_size = 18
+text = "Hello, world
+Eeeeeek
+OOOO
+Whoah
+How
+About"
+
+[node name="Button" type="Button" parent="Control"]
+process_mode = 3
+layout_mode = 0
+offset_left = 456.0
+offset_top = 516.0
+offset_right = 506.0
+offset_bottom = 547.0
+text = "Close"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

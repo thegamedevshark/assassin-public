@@ -1,0 +1,315 @@
+[gd_scene load_steps=25 format=3 uid="uid://d3jhkssteqpq5"]
+
+[ext_resource type="Texture2D" uid="uid://cybya4xj4mqiw" path="res://8.png" id="1_34upw"]
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="2_hofqc"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="3_g6274"]
+[ext_resource type="PackedScene" uid="uid://ba2oe8rq6sy5x" path="res://scenes/bar.tscn" id="4_0f0wx"]
+[ext_resource type="PackedScene" uid="uid://b4b0cc0lr4hqa" path="res://scenes/ledge.tscn" id="5_xthl3"]
+[ext_resource type="PackedScene" uid="uid://c1a4n57ue4uy4" path="res://scenes/ladder.tscn" id="6_b2qvt"]
+[ext_resource type="PackedScene" uid="uid://vf2mye7jyc0m" path="res://scenes/conveyor.tscn" id="7_wjehm"]
+[ext_resource type="PackedScene" uid="uid://telvram8p66o" path="res://scenes/crate.tscn" id="8_1fkih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pken"]
+size = Vector2(16, 304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su8fo"]
+size = Vector2(16, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n28u0"]
+size = Vector2(16, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6brk"]
+size = Vector2(16, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5c4m"]
+size = Vector2(16, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5fq8"]
+size = Vector2(96, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npurd"]
+size = Vector2(48, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j2ox"]
+size = Vector2(60, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4smi"]
+size = Vector2(52, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rncwa"]
+size = Vector2(104, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awkh4"]
+size = Vector2(116, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nxf4"]
+size = Vector2(116, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_haku2"]
+size = Vector2(1328, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tnp4"]
+size = Vector2(47, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvbku"]
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvn8a"]
+size = Vector2(12, 36)
+
+[node name="Level8" type="Node2D"]
+
+[node name="8" type="Sprite2D" parent="."]
+position = Vector2(240, 320)
+texture = ExtResource("1_34upw")
+
+[node name="Player" parent="." instance=ExtResource("2_hofqc")]
+position = Vector2(432, 232)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_g6274")]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 640
+target = NodePath("../Player")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(80, 640, 80, 604, 96, 604, 96, 568, 128, 568, 128, 500, 140, 500, 140, 512, 208, 512, 208, 632, 256, 632, 256, 604, 468, 604, 468, 312, 460, 304, 428, 300, 344, 300, 200, 296, 76, 296, 76, 264, 180, 264, 180, 260, 296, 260, 296, 256, 412, 256, 412, 252, 1736, 252, 480, 640)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(64, 544, 64, 524, 4, 524, 4, 312, 8, 300, 36, 296, 36, 260, 4, 260, 4, 224, 36, 224, 36, 212, 4, 212, 4, 172, 116, 172, 116, 136, 36, 136, 36, 104, 48, 96, 84, 96, 84, 80, 36, 80, 36, 48, 48, 40, 88, 36, 152, 36, 152, 64, 184, 64, 216, 48, 228, 36, 288, 36, 400, 44, 436, 52, 468, 64, 480, 64, 480, 0, 0, 0, 0, 544)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(64, 640, 64, 604, 0, 604, 0, 640)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(256, 512, 416, 512, 416, 544, 256, 544)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(416, 480, 416, 448, 352, 448, 352, 464, 304, 464, 304, 480)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(352, 416, 352, 352, 416, 352, 416, 416)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(256, 428, 256, 412, 196, 412, 196, 392, 136, 392, 136, 364, 24, 364, 24, 428)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(152, 172, 232, 172, 232, 112, 200, 112, 200, 136, 152, 136)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(268, 172, 348, 172, 348, 136, 328, 136, 328, 116, 288, 116, 288, 136, 268, 136)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(384, 112, 412, 112, 412, 128, 480, 128, 480, 212, 468, 212, 468, 192, 448, 184, 384, 172)
+
+[node name="Bars" type="Node2D" parent="."]
+
+[node name="Bar" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(36, 432)
+
+[node name="Bar2" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(52, 432)
+
+[node name="Bar3" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(68, 432)
+
+[node name="Bar4" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(84, 432)
+
+[node name="Bar5" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(100, 432)
+
+[node name="Bar6" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(116, 432)
+
+[node name="Bar7" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(132, 432)
+
+[node name="Bar8" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(148, 432)
+
+[node name="Bar9" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(164, 432)
+
+[node name="Bar10" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(180, 432)
+
+[node name="Bar11" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(196, 432)
+
+[node name="Bar12" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(212, 432)
+
+[node name="Bar13" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(228, 432)
+
+[node name="Bar14" parent="Bars" instance=ExtResource("4_0f0wx")]
+position = Vector2(244, 432)
+
+[node name="Ledges" type="Node2D" parent="."]
+
+[node name="Ledge2" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(128, 500)
+
+[node name="Ledge3" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(256, 520)
+
+[node name="Ledge4" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(416, 512)
+
+[node name="Ledge5" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(416, 448)
+
+[node name="Ledge6" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(304, 472)
+
+[node name="Ledge7" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(256, 412)
+
+[node name="Ledge8" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(352, 352)
+
+[node name="Ledge9" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(416, 352)
+
+[node name="Ledge11" parent="Ledges" instance=ExtResource("5_xthl3")]
+position = Vector2(36, 260)
+
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Ladder" parent="Ladders" instance=ExtResource("6_b2qvt")]
+position = Vector2(444, 456)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_4pken")
+
+[node name="Ladder2" parent="Ladders" instance=ExtResource("6_b2qvt")]
+position = Vector2(56, 304)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+position = Vector2(0, -36)
+shape = SubResource("RectangleShape2D_su8fo")
+
+[node name="Ladder3" parent="Ladders" instance=ExtResource("6_b2qvt")]
+position = Vector2(136, 188)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2(0, -38)
+shape = SubResource("RectangleShape2D_n28u0")
+
+[node name="Ladder4" parent="Ladders" instance=ExtResource("6_b2qvt")]
+position = Vector2(252, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
+position = Vector2(0, 28)
+shape = SubResource("RectangleShape2D_d6brk")
+
+[node name="Ladder5" parent="Ladders" instance=ExtResource("6_b2qvt")]
+position = Vector2(368, 164)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder5"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_p5c4m")
+
+[node name="Conveyers" type="Node2D" parent="."]
+
+[node name="Conveyor" parent="Conveyers" instance=ExtResource("7_wjehm")]
+speed = 30.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor"]
+position = Vector2(304, 512)
+shape = SubResource("RectangleShape2D_h5fq8")
+
+[node name="Conveyor2" parent="Conveyers" instance=ExtResource("7_wjehm")]
+speed = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor2"]
+position = Vector2(328, 464)
+shape = SubResource("RectangleShape2D_npurd")
+
+[node name="Conveyor3" parent="Conveyers" instance=ExtResource("7_wjehm")]
+direction = 1
+speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor3"]
+position = Vector2(34, 524)
+shape = SubResource("RectangleShape2D_7j2ox")
+
+[node name="Conveyor4" parent="Conveyers" instance=ExtResource("7_wjehm")]
+speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor4"]
+position = Vector2(50, 364)
+shape = SubResource("RectangleShape2D_t4smi")
+
+[node name="Conveyor5" parent="Conveyers" instance=ExtResource("7_wjehm")]
+speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor5"]
+position = Vector2(128, 264)
+shape = SubResource("RectangleShape2D_rncwa")
+
+[node name="Conveyor6" parent="Conveyers" instance=ExtResource("7_wjehm")]
+speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor6"]
+position = Vector2(238, 260)
+shape = SubResource("RectangleShape2D_awkh4")
+
+[node name="Conveyor7" parent="Conveyers" instance=ExtResource("7_wjehm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor7"]
+position = Vector2(354, 256)
+shape = SubResource("RectangleShape2D_8nxf4")
+
+[node name="Conveyor8" parent="Conveyers" instance=ExtResource("7_wjehm")]
+speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor8"]
+position = Vector2(1072, 252)
+shape = SubResource("RectangleShape2D_haku2")
+
+[node name="Crates" type="Node2D" parent="."]
+
+[node name="Crate" parent="Crates" instance=ExtResource("8_1fkih")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate"]
+position = Vector2(327.5, 500)
+shape = SubResource("RectangleShape2D_2tnp4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate"]
+offset_left = 304.0
+offset_top = 488.0
+offset_right = 352.0
+offset_bottom = 512.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+
+[node name="Crate2" parent="Crates" instance=ExtResource("8_1fkih")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate2"]
+position = Vector2(334, 452)
+shape = SubResource("RectangleShape2D_pvbku")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate2"]
+offset_left = 320.0
+offset_top = 440.0
+offset_right = 348.0
+offset_bottom = 464.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+
+[node name="Crate3" parent="Crates" instance=ExtResource("8_1fkih")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate3"]
+position = Vector2(322, 238)
+shape = SubResource("RectangleShape2D_jvn8a")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate3"]
+offset_left = 316.0
+offset_top = 220.0
+offset_right = 328.0
+offset_bottom = 256.0
+color = Color(0.137255, 0.121569, 0.12549, 1)

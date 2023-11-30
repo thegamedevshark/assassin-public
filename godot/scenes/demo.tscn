@@ -1,0 +1,282 @@
+[gd_scene load_steps=18 format=3 uid="uid://dw8q278ayafq6"]
+
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="1_vbbui"]
+[ext_resource type="PackedScene" uid="uid://b4b0cc0lr4hqa" path="res://scenes/ledge.tscn" id="2_cxvqc"]
+[ext_resource type="PackedScene" uid="uid://ba2oe8rq6sy5x" path="res://scenes/bar.tscn" id="3_d4s7d"]
+[ext_resource type="PackedScene" uid="uid://cqstuok25f6l" path="res://scenes/guard.tscn" id="4_2lrav"]
+[ext_resource type="PackedScene" uid="uid://0gg8hkc4hjmp" path="res://scenes/notch.tscn" id="5_08pox"]
+[ext_resource type="PackedScene" uid="uid://vf2mye7jyc0m" path="res://scenes/conveyor.tscn" id="6_icowj"]
+[ext_resource type="PackedScene" uid="uid://c1a4n57ue4uy4" path="res://scenes/ladder.tscn" id="7_li0t3"]
+[ext_resource type="PackedScene" uid="uid://telvram8p66o" path="res://scenes/crate.tscn" id="8_nxu3j"]
+[ext_resource type="PackedScene" path="res://scenes/note.tscn" id="9_udtfk"]
+[ext_resource type="PackedScene" path="res://scenes/note_interface.tscn" id="11_7t5ar"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="11_estbr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bll8k"]
+size = Vector2(320, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl0s0"]
+size = Vector2(96, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d86e"]
+size = Vector2(128, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xcag"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85o41"]
+size = Vector2(16, 280)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3qns"]
+size = Vector2(16, 16)
+
+[node name="Demo" type="Node2D"]
+position = Vector2(329, 199)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+offset_left = -160.0
+offset_right = 160.0
+offset_bottom = 128.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_bll8k")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(128, -88)
+
+[node name="ColorRect" type="ColorRect" parent="Wall"]
+offset_left = -64.0
+offset_right = 32.0
+offset_bottom = 88.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-16, 44)
+shape = SubResource("RectangleShape2D_dl0s0")
+
+[node name="Bar2" type="StaticBody2D" parent="."]
+position = Vector2(-224, -104)
+
+[node name="ColorRect" type="ColorRect" parent="Bar2"]
+offset_left = -96.0
+offset_right = 32.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar2"]
+position = Vector2(-32, 4)
+shape = SubResource("RectangleShape2D_1d86e")
+
+[node name="Bar" type="StaticBody2D" parent="."]
+position = Vector2(-64, -104)
+
+[node name="ColorRect" type="ColorRect" parent="Bar"]
+offset_left = -96.0
+offset_right = 32.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar"]
+position = Vector2(-32, 4)
+shape = SubResource("RectangleShape2D_1d86e")
+
+[node name="ColorRect2" type="ColorRect" parent="Bar"]
+offset_left = -92.0
+offset_top = 4.0
+offset_right = -84.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Bar"]
+offset_left = -76.0
+offset_top = 4.0
+offset_right = -68.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Bar"]
+offset_left = -60.0
+offset_top = 4.0
+offset_right = -52.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Bar"]
+offset_left = -44.0
+offset_top = 4.0
+offset_right = -36.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Bar"]
+offset_left = -28.0
+offset_top = 4.0
+offset_right = -20.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Bar"]
+offset_left = -12.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Bar"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 12.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="Bar"]
+offset_left = 20.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_vbbui")]
+position = Vector2(-128, -104)
+
+[node name="Ledges" type="Node2D" parent="."]
+
+[node name="Ledge" parent="Ledges" instance=ExtResource("2_cxvqc")]
+position = Vector2(64, -88)
+
+[node name="Ledge2" parent="Ledges" instance=ExtResource("2_cxvqc")]
+position = Vector2(160, -88)
+
+[node name="Ledge3" parent="Ledges" instance=ExtResource("2_cxvqc")]
+position = Vector2(-160, 0)
+
+[node name="Bars" type="Node2D" parent="."]
+
+[node name="Bar" parent="Bars" instance=ExtResource("3_d4s7d")]
+position = Vector2(-152, -96)
+
+[node name="Bar2" parent="Bars" instance=ExtResource("3_d4s7d")]
+position = Vector2(-136, -96)
+
+[node name="Bar3" parent="Bars" instance=ExtResource("3_d4s7d")]
+position = Vector2(-120, -96)
+
+[node name="Bar4" parent="Bars" instance=ExtResource("3_d4s7d")]
+position = Vector2(-104, -96)
+
+[node name="Bar5" parent="Bars" instance=ExtResource("3_d4s7d")]
+position = Vector2(-88, -96)
+
+[node name="Bar6" parent="Bars" instance=ExtResource("3_d4s7d")]
+position = Vector2(-72, -96)
+
+[node name="Bar7" parent="Bars" instance=ExtResource("3_d4s7d")]
+position = Vector2(-56, -96)
+
+[node name="Bar8" parent="Bars" instance=ExtResource("3_d4s7d")]
+position = Vector2(-40, -96)
+
+[node name="Guard" parent="." node_paths=PackedStringArray("notch_parent") instance=ExtResource("4_2lrav")]
+position = Vector2(-128, 0)
+notch_parent = NodePath("Notches")
+
+[node name="Notches" type="Node" parent="Guard"]
+
+[node name="Notch" parent="Guard/Notches" instance=ExtResource("5_08pox")]
+position = Vector2(265, 199)
+pause = 5
+
+[node name="Notch2" parent="Guard/Notches" instance=ExtResource("5_08pox")]
+position = Vector2(329, 199)
+pause = 2
+
+[node name="Conveyor" parent="." instance=ExtResource("6_icowj")]
+position = Vector2(-320, -104)
+direction = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor"]
+position = Vector2(64, 0)
+shape = SubResource("RectangleShape2D_3xcag")
+
+[node name="Ladder" parent="." instance=ExtResource("7_li0t3")]
+position = Vector2(-64, -104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+position = Vector2(0, -140)
+shape = SubResource("RectangleShape2D_85o41")
+
+[node name="ColorRect" type="ColorRect" parent="Ladder"]
+offset_left = -8.0
+offset_top = -88.0
+offset_right = -4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Ladder"]
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 8.0
+offset_bottom = -8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Ladder"]
+offset_left = -8.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = -24.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Ladder"]
+offset_left = -8.0
+offset_top = -48.0
+offset_right = 8.0
+offset_bottom = -40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Ladder"]
+offset_left = -8.0
+offset_top = -64.0
+offset_right = 8.0
+offset_bottom = -56.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Ladder"]
+offset_left = -8.0
+offset_top = -80.0
+offset_right = 8.0
+offset_bottom = -72.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Ladder"]
+offset_left = 4.0
+offset_top = -88.0
+offset_right = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate" parent="." instance=ExtResource("8_nxu3j")]
+position = Vector2(-296, -144)
+
+[node name="ColorRect" type="ColorRect" parent="Crate"]
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_a3qns")
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_estbr")]
+target = NodePath("../Player")
+
+[node name="Note" parent="." node_paths=PackedStringArray("note_interface") instance=ExtResource("9_udtfk")]
+process_mode = 3
+position = Vector2(-104, -104)
+note_interface = NodePath("../NoteInterface")
+text = "I don't know where I am..."
+
+[node name="NoteInterface" parent="." instance=ExtResource("11_7t5ar")]
+visible = false

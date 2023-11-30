@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://vf2mye7jyc0m"]
+
+[ext_resource type="Script" path="res://scripts/conveyor.gd" id="1_ocbs6"]
+
+[node name="Conveyor" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_ocbs6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

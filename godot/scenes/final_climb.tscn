@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6t1x57wd80xe"]
+
+[ext_resource type="Texture2D" uid="uid://bcx64lam3nh5h" path="res://finalclimb.png" id="1_q5qk7"]
+[ext_resource type="PackedScene" uid="uid://c1a4n57ue4uy4" path="res://scenes/ladder.tscn" id="2_cqi7s"]
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="3_nvap0"]
+[ext_resource type="PackedScene" uid="uid://ctrr821kfyhud" path="res://scenes/background.tscn" id="4_ygxtj"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="5_fi0mp"]
+[ext_resource type="PackedScene" uid="uid://s25e2po7gv1i" path="res://scenes/fade_in.tscn" id="6_gh5tr"]
+[ext_resource type="PackedScene" uid="uid://c2tbtwxc7sbvd" path="res://scenes/goal.tscn" id="7_brtws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuyi1"]
+size = Vector2(68, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqx1i"]
+size = Vector2(24, 1368)
+
+[node name="Level6" type="Node2D"]
+
+[node name="6" type="Sprite2D" parent="."]
+position = Vector2(240, 640)
+texture = ExtResource("1_q5qk7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 1240, 0, 1280, 480, 1280, 480, -128, 264, -128, 264, 576, 280, 588, 288, 608, 288, 800, 320, 832, 336, 864, 336, 992, 364, 1024, 384, 1056, 384, 1240)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, -128, 212, -128, 212, 576, 200, 588, 192, 608, 192, 800, 160, 832, 144, 864, 144, 992, 116, 1024, 96, 1056, 96, 1176, 0, 1176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-30, 1202)
+shape = SubResource("RectangleShape2D_iuyi1")
+
+[node name="Ladder" parent="." instance=ExtResource("2_cqi7s")]
+position = Vector2(240, 1240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+position = Vector2(0, -684)
+shape = SubResource("RectangleShape2D_nqx1i")
+
+[node name="Player" parent="." instance=ExtResource("3_nvap0")]
+position = Vector2(32, 1240)
+
+[node name="Background" parent="." instance=ExtResource("4_ygxtj")]
+offset_left = -96.0
+offset_top = -164.0
+offset_right = 520.0
+offset_bottom = 1352.0
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_fi0mp")]
+position = Vector2(32, 1240)
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 1280
+target = NodePath("../Player")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(480, 1280)
+
+[node name="FadeIn" parent="." node_paths=PackedStringArray("goal") instance=ExtResource("6_gh5tr")]
+visible = false
+goal = NodePath("../Goal")
+
+[node name="Goal" parent="." instance=ExtResource("7_brtws")]
+position = Vector2(240, 640)

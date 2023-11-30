@@ -1,0 +1,559 @@
+[gd_scene load_steps=25 format=3 uid="uid://d3art3ocx2iws"]
+
+[ext_resource type="Texture2D" uid="uid://ccxjnyu3hgovo" path="res://sewers.svg" id="1_afpww"]
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="2_jhkad"]
+[ext_resource type="PackedScene" uid="uid://b4b0cc0lr4hqa" path="res://scenes/ledge.tscn" id="3_hpybx"]
+[ext_resource type="PackedScene" uid="uid://cqstuok25f6l" path="res://scenes/guard.tscn" id="3_u8xok"]
+[ext_resource type="PackedScene" uid="uid://ba2oe8rq6sy5x" path="res://scenes/bar.tscn" id="4_s60xh"]
+[ext_resource type="PackedScene" uid="uid://c1a4n57ue4uy4" path="res://scenes/ladder.tscn" id="5_u78h3"]
+[ext_resource type="PackedScene" uid="uid://0gg8hkc4hjmp" path="res://scenes/notch.tscn" id="7_6fwn6"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="8_nlfb1"]
+[ext_resource type="PackedScene" uid="uid://c2tbtwxc7sbvd" path="res://scenes/goal.tscn" id="9_hu4d5"]
+[ext_resource type="Theme" uid="uid://c0oe35m428bvp" path="res://themes/theme.tres" id="9_y1fri"]
+[ext_resource type="PackedScene" uid="uid://kw603b4o6s7v" path="res://scenes/level_1.tscn" id="10_xihqh"]
+[ext_resource type="PackedScene" uid="uid://bc3h2k0xq2aef" path="res://scenes/music.tscn" id="11_57t42"]
+[ext_resource type="AudioStream" uid="uid://bb223ngfp637a" path="res://music/sewers.wav" id="12_g5kim"]
+[ext_resource type="PackedScene" uid="uid://s25e2po7gv1i" path="res://scenes/fade_in.tscn" id="13_sx1bo"]
+[ext_resource type="PackedScene" uid="uid://bjuqy2barp5xr" path="res://scenes/show_inside.tscn" id="15_pj4ds"]
+[ext_resource type="PackedScene" uid="uid://ctrr821kfyhud" path="res://scenes/background.tscn" id="16_qc3gi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2j2y"]
+size = Vector2(32, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y3ae"]
+size = Vector2(72, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsw57"]
+size = Vector2(168, 214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo2ri"]
+size = Vector2(124, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kewpi"]
+size = Vector2(144, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynckr"]
+size = Vector2(264, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt770"]
+size = Vector2(288, 252)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaodw"]
+size = Vector2(308, 412)
+
+[node name="Sewers" type="Node2D"]
+
+[node name="Sewers" type="Sprite2D" parent="."]
+position = Vector2(720, 160)
+texture = ExtResource("1_afpww")
+
+[node name="Player" parent="." instance=ExtResource("2_jhkad")]
+position = Vector2(72, 252)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(736, 176)
+polygon = PackedVector2Array(704, 144, -736, 144, -736, 76, 704, 76)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(140, 236, 228, 236, 228, 252, 140, 252)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(288, 180, 576, 180, 576, 252, 288, 252)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(720, 144, 864, 144, 864, 252, 720, 252)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(936, 180, 952, 180, 952, 216, 1064, 216, 1064, 180, 1080, 180, 1080, 252, 936, 252)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1152, 236, 1200, 236, 1200, 220, 1236, 220, 1236, 200, 1296, 200, 1296, 176, 1380, 176, 1380, 168, 1396, 168, 1396, 140, 1404, 140, 1404, -64, 1440, -64, 1440, 252, 1152, 252)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(28, 252, 0, 252, 0, -64, 1332, -64, 1332, 68, 1180, 68, 1124, 80, 1104, 92, 1080, 116, 936, 116, 936, 76, 920, 68, 800, 68, 796, 68, 772, 76, 756, 88, 756, 100, 568, 100, 568, 76, 552, 76, 520, 96, 504, 120, 504, 152, 396, 152, 396, 104, 360, 68, 136, 68, 72, 84, 40, 124, 28, 164)
+
+[node name="Ledges" type="Node2D" parent="."]
+
+[node name="Ledge" parent="Ledges" instance=ExtResource("3_hpybx")]
+position = Vector2(288, 180)
+
+[node name="Ledge2" parent="Ledges" instance=ExtResource("3_hpybx")]
+position = Vector2(576, 180)
+
+[node name="Ledge3" parent="Ledges" instance=ExtResource("3_hpybx")]
+position = Vector2(720, 144)
+
+[node name="Ledge4" parent="Ledges" instance=ExtResource("3_hpybx")]
+position = Vector2(864, 144)
+
+[node name="Ledge5" parent="Ledges" instance=ExtResource("3_hpybx")]
+position = Vector2(936, 180)
+
+[node name="Ledge6" parent="Ledges" instance=ExtResource("3_hpybx")]
+position = Vector2(1080, 180)
+
+[node name="Bars" type="Node2D" parent="."]
+
+[node name="Bar" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(572, 104)
+
+[node name="Bar2" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(588, 104)
+
+[node name="Bar3" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(604, 104)
+
+[node name="Bar4" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(620, 104)
+
+[node name="Bar5" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(636, 104)
+
+[node name="Bar6" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(652, 104)
+
+[node name="Bar7" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(668, 104)
+
+[node name="Bar8" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(684, 104)
+
+[node name="Bar9" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(700, 104)
+
+[node name="Bar10" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(716, 104)
+
+[node name="Bar11" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(732, 104)
+
+[node name="Bar12" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(748, 104)
+
+[node name="Bar13" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(940, 120)
+
+[node name="Bar14" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(956, 120)
+
+[node name="Bar15" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(972, 120)
+
+[node name="Bar16" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(988, 120)
+
+[node name="Bar17" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(1004, 120)
+
+[node name="Bar18" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(1020, 120)
+
+[node name="Bar19" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(1036, 120)
+
+[node name="Bar20" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(1052, 120)
+
+[node name="Bar21" parent="Bars" instance=ExtResource("4_s60xh")]
+position = Vector2(1068, 120)
+
+[node name="Ladder" parent="." instance=ExtResource("5_u78h3")]
+position = Vector2(1360, 164)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+position = Vector2(4, -108)
+shape = SubResource("RectangleShape2D_b2j2y")
+
+[node name="Guards" type="Node2D" parent="."]
+
+[node name="Guard" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("3_u8xok")]
+position = Vector2(1048, 216)
+notch_parent = NodePath("NotchParent")
+
+[node name="NotchParent" type="Node" parent="Guards/Guard"]
+
+[node name="Notch" parent="Guards/Guard/NotchParent" instance=ExtResource("7_6fwn6")]
+position = Vector2(1048, 216)
+pause = 3
+
+[node name="Notch2" parent="Guards/Guard/NotchParent" instance=ExtResource("7_6fwn6")]
+position = Vector2(968, 216)
+pause = 3
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_nlfb1")]
+limit_left = 0
+limit_top = 0
+limit_right = 1440
+limit_bottom = 320
+target = NodePath("../Player")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1440, 320)
+
+[node name="Goal" parent="." instance=ExtResource("9_hu4d5")]
+position = Vector2(1368, 0)
+next_level = ExtResource("10_xihqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_1y3ae")
+
+[node name="Music" parent="." instance=ExtResource("11_57t42")]
+stream = ExtResource("12_g5kim")
+
+[node name="FadeIn" parent="." node_paths=PackedStringArray("goal", "music") instance=ExtResource("13_sx1bo")]
+visible = false
+goal = NodePath("../Goal")
+music = NodePath("../Music")
+
+[node name="Tutorial" type="Node" parent="."]
+
+[node name="Control" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("9_y1fri")
+
+[node name="Label" type="Label" parent="Tutorial/Control"]
+z_index = -1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 156.0
+offset_right = 232.0
+offset_bottom = 208.0
+text = "ARROWS TO MOVE
+"
+
+[node name="Label2" type="Label" parent="Tutorial/Control"]
+z_index = -1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 176.0
+offset_right = 208.0
+offset_bottom = 199.0
+text = "X TO JUMP
+"
+
+[node name="Label3" type="Label" parent="Tutorial/Control"]
+z_index = -1
+layout_mode = 0
+offset_left = 228.0
+offset_top = 88.0
+offset_right = 384.0
+offset_bottom = 180.0
+text = "GRAB
+LEDGES
+(X TO 
+DISMOUNT)
+"
+
+[node name="Label4" type="Label" parent="Tutorial/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 376.0
+offset_top = 188.0
+offset_right = 520.0
+offset_bottom = 240.0
+text = "C TO CROUCH"
+
+[node name="Label5" type="Label" parent="Tutorial/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 588.0
+offset_top = 48.0
+offset_right = 732.0
+offset_bottom = 100.0
+text = "GRAB AND MOVE
+ON BARS"
+
+[node name="Label8" type="Label" parent="Tutorial/Control"]
+z_index = -1
+layout_mode = 0
+offset_left = 588.0
+offset_top = 200.0
+offset_right = 732.0
+offset_bottom = 252.0
+text = "DOWN ARROW
+TO DROP"
+
+[node name="Label6" type="Label" parent="Tutorial/Control"]
+z_index = -1
+layout_mode = 0
+offset_left = 944.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 180.0
+text = "DON'T GET SEEN
+BY GUARDS"
+
+[node name="Label7" type="Label" parent="Tutorial/Control"]
+z_index = -1
+layout_mode = 0
+offset_left = 1156.0
+offset_top = 96.0
+offset_right = 1336.0
+offset_bottom = 174.0
+text = "UP ARROW ON
+LADDER TO CLIMB
+X TO JUMP OFF"
+
+[node name="Areas" type="Node" parent="Tutorial"]
+
+[node name="ShowInside" parent="Tutorial/Areas" node_paths=PackedStringArray("nodes") instance=ExtResource("15_pj4ds")]
+position = Vector2(96, 252)
+nodes = [NodePath("../../Control/Label"), NodePath("../../Control/Label2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Areas/ShowInside"]
+position = Vector2(0, -97)
+shape = SubResource("RectangleShape2D_gsw57")
+
+[node name="ShowInside2" parent="Tutorial/Areas" node_paths=PackedStringArray("nodes") instance=ExtResource("15_pj4ds")]
+position = Vector2(256, 192)
+nodes = [NodePath("../../Control/Label3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Areas/ShowInside2"]
+position = Vector2(10, -36)
+shape = SubResource("RectangleShape2D_mo2ri")
+
+[node name="ShowInside3" parent="Tutorial/Areas" node_paths=PackedStringArray("nodes") instance=ExtResource("15_pj4ds")]
+position = Vector2(448, 160)
+nodes = [NodePath("../../Control/Label4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Areas/ShowInside3"]
+position = Vector2(-12, -44)
+shape = SubResource("RectangleShape2D_kewpi")
+
+[node name="ShowInside4" parent="Tutorial/Areas" node_paths=PackedStringArray("nodes") instance=ExtResource("15_pj4ds")]
+position = Vector2(640, 164)
+nodes = [NodePath("../../Control/Label5"), NodePath("../../Control/Label8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Areas/ShowInside4"]
+position = Vector2(28, -12)
+shape = SubResource("RectangleShape2D_ynckr")
+
+[node name="ShowInside5" parent="Tutorial/Areas" node_paths=PackedStringArray("nodes") instance=ExtResource("15_pj4ds")]
+position = Vector2(1004, 164)
+nodes = [NodePath("../../Control/Label6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Areas/ShowInside5"]
+position = Vector2(-28, 2)
+shape = SubResource("RectangleShape2D_nt770")
+
+[node name="ShowInside6" parent="Tutorial/Areas" node_paths=PackedStringArray("nodes") instance=ExtResource("15_pj4ds")]
+position = Vector2(1260, 140)
+nodes = [NodePath("../../Control/Label7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Areas/ShowInside6"]
+position = Vector2(46, -74)
+shape = SubResource("RectangleShape2D_gaodw")
+
+[node name="Control" type="Control" parent="."]
+z_index = -2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -4.5
+offset_left = 1352.0
+offset_top = 88.0
+offset_right = 1356.0
+offset_bottom = 176.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 1356.0
+offset_top = 160.0
+offset_right = 1372.0
+offset_bottom = 168.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 1356.0
+offset_top = 144.0
+offset_right = 1372.0
+offset_bottom = 152.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 1356.0
+offset_top = 128.0
+offset_right = 1372.0
+offset_bottom = 136.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 1356.0
+offset_top = 112.0
+offset_right = 1372.0
+offset_bottom = 120.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 1356.0
+offset_top = 96.0
+offset_right = 1372.0
+offset_bottom = 104.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -2.0
+anchor_bottom = -2.0
+offset_left = 1356.0
+offset_top = 160.0
+offset_right = 1372.0
+offset_bottom = 168.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -2.0
+anchor_bottom = -2.0
+offset_left = 1356.0
+offset_top = 144.0
+offset_right = 1372.0
+offset_bottom = 152.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -2.0
+anchor_bottom = -2.0
+offset_left = 1356.0
+offset_top = 128.0
+offset_right = 1372.0
+offset_bottom = 136.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -2.0
+anchor_bottom = -2.0
+offset_left = 1356.0
+offset_top = 112.0
+offset_right = 1372.0
+offset_bottom = 120.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -2.0
+anchor_bottom = -2.0
+offset_left = 1356.0
+offset_top = 96.0
+offset_right = 1372.0
+offset_bottom = 104.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect13" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -4.0
+anchor_bottom = -4.0
+offset_left = 1356.0
+offset_top = 160.0
+offset_right = 1372.0
+offset_bottom = 168.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect14" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -4.0
+anchor_bottom = -4.0
+offset_left = 1356.0
+offset_top = 144.0
+offset_right = 1372.0
+offset_bottom = 152.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect15" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -4.0
+anchor_bottom = -4.0
+offset_left = 1356.0
+offset_top = 128.0
+offset_right = 1372.0
+offset_bottom = 136.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect16" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -4.0
+anchor_bottom = -4.0
+offset_left = 1356.0
+offset_top = 112.0
+offset_right = 1372.0
+offset_bottom = 120.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect17" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -4.0
+anchor_bottom = -4.0
+offset_left = 1356.0
+offset_top = 96.0
+offset_right = 1372.0
+offset_bottom = 104.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect18" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -6.0
+anchor_bottom = -6.0
+offset_left = 1356.0
+offset_top = 160.0
+offset_right = 1372.0
+offset_bottom = 168.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -4.5
+offset_left = 1372.0
+offset_top = 88.0
+offset_right = 1376.0
+offset_bottom = 176.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" parent="." instance=ExtResource("16_qc3gi")]

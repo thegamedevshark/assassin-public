@@ -1,0 +1,973 @@
+[gd_scene load_steps=28 format=3 uid="uid://dsjsxv0rya8pk"]
+
+[ext_resource type="Texture2D" uid="uid://dplieniboriat" path="res://6.png" id="1_a5x18"]
+[ext_resource type="PackedScene" uid="uid://c1a4n57ue4uy4" path="res://scenes/ladder.tscn" id="2_4m31h"]
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="3_3fh8u"]
+[ext_resource type="PackedScene" uid="uid://b4b0cc0lr4hqa" path="res://scenes/ledge.tscn" id="5_4rkgw"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="5_tyqyf"]
+[ext_resource type="PackedScene" uid="uid://telvram8p66o" path="res://scenes/crate.tscn" id="6_2fk4o"]
+[ext_resource type="PackedScene" uid="uid://vf2mye7jyc0m" path="res://scenes/conveyor.tscn" id="7_fy02i"]
+[ext_resource type="PackedScene" uid="uid://cqstuok25f6l" path="res://scenes/guard.tscn" id="8_l8io5"]
+[ext_resource type="PackedScene" uid="uid://0gg8hkc4hjmp" path="res://scenes/notch.tscn" id="9_qx5fj"]
+[ext_resource type="PackedScene" uid="uid://c2tbtwxc7sbvd" path="res://scenes/goal.tscn" id="10_qhfmy"]
+[ext_resource type="PackedScene" uid="uid://ijprwijuuf2q" path="res://scenes/level_7.tscn" id="11_vnswa"]
+[ext_resource type="PackedScene" uid="uid://ctrr821kfyhud" path="res://scenes/background.tscn" id="12_5a178"]
+[ext_resource type="PackedScene" uid="uid://s25e2po7gv1i" path="res://scenes/fade_in.tscn" id="13_le1q6"]
+[ext_resource type="PackedScene" uid="uid://bc3h2k0xq2aef" path="res://scenes/music.tscn" id="14_7ajoa"]
+[ext_resource type="AudioStream" uid="uid://blcqcluai406l" path="res://music/level_6.wav" id="15_0o17c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb4ic"]
+size = Vector2(16, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6u7j"]
+size = Vector2(16, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdg0j"]
+size = Vector2(16, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_voxhj"]
+size = Vector2(96, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qgrh"]
+size = Vector2(120, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yick4"]
+size = Vector2(120, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8q0r"]
+size = Vector2(184, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhawr"]
+size = Vector2(592, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufiuu"]
+size = Vector2(20, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uya0w"]
+size = Vector2(51.75, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0io4"]
+size = Vector2(12, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g52m"]
+size = Vector2(50, 84)
+
+[node name="Level6" type="Node2D"]
+
+[node name="6" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_a5x18")
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_tyqyf")]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 320
+target = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("3_3fh8u")]
+position = Vector2(416, 284)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(480, 320, 480, 284, 208, 284, 208, 320)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(192, 320, 0, 320, -356, 0, 236, 0, 236, 36, 12, 36, 12, 96, 44, 96, 44, 128, 12, 128, 12, 284, 192, 284)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(252, 36, 252, 36, 252, 0, 480, 0, 480, 64, 468, 64, 468, 36)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(224, 224, 272, 224, 272, 192, 224, 192)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(44, 192, 192, 192, 192, 224, 44, 224)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(372, 224, 480, 224, 480, 128, 348, 128, 348, 160, 468, 160, 468, 192, 372, 192)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(84, 140, 84, 144, 268, 144, 268, 112, 84, 112)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(480, 284, 484, 284, 484, 64, 480, 64)
+
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Ladder" parent="Ladders" instance=ExtResource("2_4m31h")]
+position = Vector2(28, 176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
+position = Vector2(0, 30)
+shape = SubResource("RectangleShape2D_yb4ic")
+
+[node name="Ladder2" parent="Ladders" instance=ExtResource("2_4m31h")]
+position = Vector2(56, 132)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_v6u7j")
+
+[node name="Ladder3" parent="Ladders" instance=ExtResource("2_4m31h")]
+position = Vector2(312, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_rdg0j")
+
+[node name="Ledges" type="Node2D" parent="."]
+
+[node name="Ledge" parent="Ledges" instance=ExtResource("5_4rkgw")]
+position = Vector2(272, 192)
+
+[node name="Ledge5" parent="Ledges" instance=ExtResource("5_4rkgw")]
+position = Vector2(224, 192)
+
+[node name="Ledge7" parent="Ledges" instance=ExtResource("5_4rkgw")]
+position = Vector2(44, 192)
+
+[node name="Ledge2" parent="Ledges" instance=ExtResource("5_4rkgw")]
+position = Vector2(372, 200)
+
+[node name="Ledge3" parent="Ledges" instance=ExtResource("5_4rkgw")]
+position = Vector2(348, 136)
+
+[node name="Ledge4" parent="Ledges" instance=ExtResource("5_4rkgw")]
+position = Vector2(268, 120)
+
+[node name="Conveyers" type="Node2D" parent="."]
+
+[node name="Conveyor" parent="Conveyers" instance=ExtResource("7_fy02i")]
+position = Vector2(408, 192)
+speed = 30.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor"]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_voxhj")
+
+[node name="Conveyor2" parent="Conveyers" instance=ExtResource("7_fy02i")]
+speed = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor2"]
+position = Vector2(408, 128)
+shape = SubResource("RectangleShape2D_3qgrh")
+
+[node name="Conveyor3" parent="Conveyers" instance=ExtResource("7_fy02i")]
+direction = 1
+speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor3"]
+position = Vector2(132, 192)
+shape = SubResource("RectangleShape2D_yick4")
+
+[node name="Conveyor4" parent="Conveyers" instance=ExtResource("7_fy02i")]
+speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor4"]
+position = Vector2(176, 112)
+shape = SubResource("RectangleShape2D_s8q0r")
+
+[node name="Conveyor5" parent="Conveyers" instance=ExtResource("7_fy02i")]
+direction = 1
+speed = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor5"]
+position = Vector2(-60, 0)
+shape = SubResource("RectangleShape2D_nhawr")
+
+[node name="Crates" type="Node2D" parent="."]
+
+[node name="Crate" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(452, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate"]
+position = Vector2(2, -12)
+shape = SubResource("RectangleShape2D_ufiuu")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate"]
+offset_left = -12.0
+offset_top = -24.0
+offset_right = 12.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+
+[node name="Crate2" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(440, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate2"]
+position = Vector2(-2.125, -28)
+shape = SubResource("RectangleShape2D_uya0w")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate2"]
+offset_left = -28.0
+offset_top = -56.0
+offset_right = 24.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate3" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(228, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate3"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate3"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate4" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(216, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate4"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate4"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate5" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(204, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate5"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate5"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate6" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(192, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate6"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate6"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate7" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(180, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate7"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate7"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate8" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(168, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate8"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate8"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate9" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(156, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate9"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate9"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate10" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(144, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate10"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate10"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate11" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(132, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate11"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate11"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate12" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(120, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate12"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate12"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate13" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(108, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate13"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate13"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate14" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(100, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate14"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate14"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate15" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(88, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate15"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate15"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate16" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(76, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate16"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate16"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate17" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(64, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate17"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate17"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate18" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(52, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate18"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate18"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate19" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(40, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate19"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate19"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate20" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(28, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate20"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate20"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate21" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(20, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate21"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate21"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate22" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate22"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate22"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate23" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate23"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate23"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate24" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate24"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate24"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate25" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-28, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate25"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate25"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate26" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-40, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate26"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate26"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate27" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-52, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate27"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate27"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate28" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-60, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate28"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate28"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate29" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-72, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate29"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate29"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate30" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-84, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate30"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate30"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate31" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-96, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate31"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate31"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate32" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-108, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate32"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate32"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate33" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-120, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate33"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate33"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate34" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-132, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate34"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate34"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate35" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-140, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate35"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate35"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate36" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-152, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate36"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate36"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate37" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-164, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate37"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate37"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate38" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-176, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate38"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate38"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate39" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-188, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate39"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate39"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate40" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-200, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate40"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate40"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate41" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-212, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate41"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate41"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate42" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-220, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate42"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate42"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate43" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-232, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate43"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate43"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate44" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-244, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate44"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate44"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate45" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-256, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate45"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate45"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate46" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-268, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate46"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate46"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate47" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-280, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate47"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate47"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate48" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-292, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate48"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate48"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate49" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-300, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate49"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate49"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate50" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-312, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate50"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate50"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate51" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-324, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate51"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate51"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate52" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-336, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate52"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate52"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Crate53" parent="Crates" instance=ExtResource("6_2fk4o")]
+position = Vector2(-348, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate53"]
+position = Vector2(-2, -18)
+shape = SubResource("RectangleShape2D_n0io4")
+
+[node name="ColorRect" type="ColorRect" parent="Crates/Crate53"]
+offset_left = -8.0
+offset_top = -36.0
+offset_right = 4.0
+color = Color(0.137255, 0.121569, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Guards" type="Node2D" parent="."]
+
+[node name="Guard" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("8_l8io5")]
+position = Vector2(260, 284)
+notch_parent = NodePath("Parent Notch")
+
+[node name="Parent Notch" type="Node" parent="Guards/Guard"]
+
+[node name="Notch" parent="Guards/Guard/Parent Notch" instance=ExtResource("9_qx5fj")]
+position = Vector2(220, 284)
+pause = 5
+
+[node name="Notch2" parent="Guards/Guard/Parent Notch" instance=ExtResource("9_qx5fj")]
+position = Vector2(264, 284)
+pause = 5
+
+[node name="Guard3" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("8_l8io5")]
+position = Vector2(28, 96)
+notch_parent = NodePath("Parent Notch")
+
+[node name="Parent Notch" type="Node" parent="Guards/Guard3"]
+
+[node name="Notch" parent="Guards/Guard3/Parent Notch" instance=ExtResource("9_qx5fj")]
+position = Vector2(36, 96)
+pause = 3
+
+[node name="Notch2" parent="Guards/Guard3/Parent Notch" instance=ExtResource("9_qx5fj")]
+position = Vector2(20, 96)
+pause = 3
+
+[node name="Background" parent="." instance=ExtResource("12_5a178")]
+offset_left = -568.0
+offset_top = -84.0
+offset_right = 952.0
+offset_bottom = 372.0
+
+[node name="Goal" parent="." instance=ExtResource("10_qhfmy")]
+position = Vector2(484, 96)
+next_level = ExtResource("11_vnswa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(12, -4)
+shape = SubResource("RectangleShape2D_5g52m")
+
+[node name="FadeIn" parent="." node_paths=PackedStringArray("goal", "music") instance=ExtResource("13_le1q6")]
+visible = false
+goal = NodePath("../Goal")
+music = NodePath("../Music")
+
+[node name="Music" parent="." instance=ExtResource("14_7ajoa")]
+stream = ExtResource("15_0o17c")

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-3" y="65.68" width="28" height="190.82"/>
+  <rect class="cls-3" x="8" y="219.51" width="20" height="44.49"/>
+  <rect class="cls-3" y="252" width="576" height="68"/>
+  <rect class="cls-3" y="0" width="1332" height="68"/>
+  <rect class="cls-3" x="140" y="236" width="88" height="20.5"/>
+  <rect class="cls-3" x="288" y="180" width="288" height="72"/>
+  <rect class="cls-3" x="396" y="67.5" width="108" height="84.5"/>
+  <rect class="cls-3" x="576" y="252" width="144" height="68"/>
+  <rect class="cls-3" x="568" y="67.5" width="188" height="32.5"/>
+  <rect class="cls-3" x="720" y="144" width="144" height="176"/>
+  <rect class="cls-3" x="568" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="584" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="600" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="616" y="100" width="8" height="8"/>
+  <rect class="cls-3" x="632" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="648" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="664" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="680" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="696" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="712" y="99" width="8" height="9"/>
+  <rect class="cls-3" x="728" y="100" width="8" height="8"/>
+  <rect class="cls-3" x="864" y="252" width="576" height="68"/>
+  <rect class="cls-3" x="936" y="216" width="144" height="36"/>
+  <rect class="cls-3" x="936" y="67.5" width="144" height="48.5"/>
+  <rect class="cls-3" x="936" y="180" width="16" height="36"/>
+  <rect class="cls-3" x="1064" y="180" width="16" height="36"/>
+  <rect class="cls-3" x="495" y="36.51" width="90" height="39.49"/>
+  <rect class="cls-3" x="1296" y="176" width="144" height="80.99"/>
+  <rect class="cls-3" x="1152" y="236" width="144" height="43"/>
+  <rect class="cls-3" x="1200" y="220" width="145.5" height="41"/>
+  <rect class="cls-3" x="1236" y="200" width="145.5" height="43"/>
+  <rect class="cls-3" x="1408" y="0" width="32" height="184.5"/>
+  <rect class="cls-3" x="1380" y="168" width="42" height="43.99"/>
+  <rect class="cls-3" x="1395" y="139.5" width="40.5" height="45"/>
+  <rect class="cls-3" x="1404" y="76.5" width="36" height="63"/>
+  <line class="cls-1" x1="1350" y1="180" x2="1350" y2="180.5"/>
+  <line class="cls-1" x1="1368" y1="180" x2="1367.95" y2="180.5"/>
+  <line class="cls-2" x1="1348" y1="143.5" x2="1348" y2="184"/>
+  <line class="cls-2" x1="1348" y1="161.5" x2="1367.88" y2="161.5"/>
+  <line class="cls-1" x1="1350" y1="180" x2="1368" y2="180"/>
+  <line class="cls-2" x1="1348" y1="143.5" x2="1348" y2="175"/>
+  <line class="cls-2" x1="1367.88" y1="143.5" x2="1367.88" y2="179.5"/>
+  <line class="cls-2" x1="1348" y1="143.5" x2="1348" y2="144"/>
+  <line class="cls-2" x1="1367.88" y1="143.5" x2="1367.83" y2="144"/>
+  <line class="cls-2" x1="1348" y1="107.5" x2="1348" y2="148"/>
+  <line class="cls-2" x1="1348" y1="125.5" x2="1367.88" y2="125.5"/>
+  <line class="cls-2" x1="1348" y1="143.5" x2="1367.88" y2="143.5"/>
+  <line class="cls-2" x1="1348" y1="107.5" x2="1348" y2="139"/>
+  <line class="cls-2" x1="1367.88" y1="107.5" x2="1367.88" y2="143.5"/>
+  <line class="cls-2" x1="1348" y1="107.5" x2="1348" y2="108"/>
+  <line class="cls-2" x1="1367.88" y1="107.5" x2="1367.83" y2="108"/>
+  <line class="cls-2" x1="1348" y1="71.5" x2="1348" y2="112"/>
+  <line class="cls-2" x1="1348" y1="89.5" x2="1367.88" y2="89.5"/>
+  <line class="cls-2" x1="1348" y1="107.5" x2="1367.88" y2="107.5"/>
+  <line class="cls-2" x1="1348" y1="71.5" x2="1348" y2="103"/>
+  <line class="cls-2" x1="1367.88" y1="71.5" x2="1367.88" y2="107.5"/>
+  <line class="cls-2" x1="1348" y1="71.5" x2="1348" y2="72"/>
+  <line class="cls-2" x1="1367.88" y1="71.5" x2="1367.83" y2="72"/>
+  <line class="cls-2" x1="1348" y1="35.5" x2="1348" y2="76"/>
+  <line class="cls-2" x1="1348" y1="53.5" x2="1367.88" y2="53.5"/>
+  <line class="cls-2" x1="1348" y1="71.5" x2="1367.88" y2="71.5"/>
+  <line class="cls-2" x1="1348" y1="35.5" x2="1348" y2="67"/>
+  <line class="cls-2" x1="1367.88" y1="35.5" x2="1367.88" y2="71.5"/>
+  <line class="cls-2" x1="1348.12" y1="35.5" x2="1348.12" y2="36"/>
+  <line class="cls-2" x1="1368" y1="35.5" x2="1367.94" y2="36"/>
+  <line class="cls-2" x1="1348.12" y1="0" x2="1348.12" y2="40"/>
+  <line class="cls-2" x1="1348.12" y1="17.5" x2="1368" y2="17.5"/>
+  <line class="cls-2" x1="1348.12" y1="35.5" x2="1368" y2="35.5"/>
+  <line class="cls-2" x1="1348.12" y1="0" x2="1348.12" y2="31.11"/>
+  <line class="cls-2" x1="1368.01" y1="0" x2="1368.01" y2="35.5"/>
+  <polyline class="cls-3" points="360 67.5 396 103.5 396 67.5"/>
+  <polyline class="cls-3" points="1404 76.5 1408.5 36 1408.5 76.5"/>
+  <polygon class="cls-3" points="28 164 40 124 72 84 136 68 28 68 28 164"/>
+  <polygon class="cls-3" points="504 120 520 96 552 76 504 76 504 120"/>
+  <polygon class="cls-3" points="756 88 772 76 800 68 756 68 756 88"/>
+  <rect class="cls-3" x="744" y="100" width="8" height="8"/>
+  <polyline class="cls-3" points="920 68 936 76 936 68"/>
+  <rect class="cls-3" x="936" y="115" width="8" height="9"/>
+  <rect class="cls-3" x="952" y="115" width="8" height="9"/>
+  <rect class="cls-3" x="968" y="115" width="8" height="9"/>
+  <rect class="cls-3" x="984" y="116" width="8" height="8"/>
+  <rect class="cls-3" x="1000" y="115" width="8" height="9"/>
+  <rect class="cls-3" x="1016" y="115" width="8" height="9"/>
+  <rect class="cls-3" x="1032" y="115" width="8" height="9"/>
+  <rect class="cls-3" x="1048" y="115" width="8" height="9"/>
+  <rect class="cls-3" x="1064" y="115" width="8" height="9"/>
+  <polygon class="cls-3" points="1080 116 1104 92 1124 80 1180 68 1080 68 1080 116"/>
+</svg>

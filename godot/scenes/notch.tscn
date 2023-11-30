@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://0gg8hkc4hjmp"]
+
+[ext_resource type="Script" path="res://scripts/notch.gd" id="1_eyj3g"]
+
+[node name="Notch" type="Marker2D"]
+gizmo_extents = 5.0
+script = ExtResource("1_eyj3g")
+
+[node name="PauseTimer" type="Timer" parent="."]
+one_shot = true

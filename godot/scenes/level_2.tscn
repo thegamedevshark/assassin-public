@@ -1,0 +1,259 @@
+[gd_scene load_steps=16 format=3 uid="uid://chkbpr4x6qmy"]
+
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="1_18wx8"]
+[ext_resource type="Texture2D" uid="uid://hgt28o21iodi" path="res://2.png" id="2_g0d2c"]
+[ext_resource type="PackedScene" uid="uid://ba2oe8rq6sy5x" path="res://scenes/bar.tscn" id="3_yea2p"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="4_5tiu0"]
+[ext_resource type="PackedScene" uid="uid://b4b0cc0lr4hqa" path="res://scenes/ledge.tscn" id="5_gxf3g"]
+[ext_resource type="PackedScene" uid="uid://cqstuok25f6l" path="res://scenes/guard.tscn" id="6_846g4"]
+[ext_resource type="PackedScene" uid="uid://0gg8hkc4hjmp" path="res://scenes/notch.tscn" id="7_y2p6l"]
+[ext_resource type="PackedScene" uid="uid://c2tbtwxc7sbvd" path="res://scenes/goal.tscn" id="8_c7owt"]
+[ext_resource type="PackedScene" uid="uid://mcooii6wa4fc" path="res://scenes/level_3.tscn" id="9_kahxm"]
+[ext_resource type="PackedScene" uid="uid://bc3h2k0xq2aef" path="res://scenes/music.tscn" id="10_pag3m"]
+[ext_resource type="AudioStream" uid="uid://dcpcmcyyndw3l" path="res://music/level_2.wav" id="11_23ewd"]
+[ext_resource type="PackedScene" uid="uid://s25e2po7gv1i" path="res://scenes/fade_in.tscn" id="12_4mhxm"]
+[ext_resource type="PackedScene" uid="uid://ctrr821kfyhud" path="res://scenes/background.tscn" id="13_p2enh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht4rg"]
+size = Vector2(42, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwtks"]
+size = Vector2(42, 80)
+
+[node name="Level2" type="Node2D"]
+
+[node name="Level2" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("2_g0d2c")
+
+[node name="Player" parent="." instance=ExtResource("1_18wx8")]
+position = Vector2(36, 288)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 288, 72, 288, 72, 252, 100, 252, 100, 288, 336, 288, 360, 264, 360, 236, 440, 236, 440, 208, 448, 208, 448, 200, 460, 200, 460, 180, 468, 180, 468, 48, 448, 48, 448, 36, 0, 36, 0, 0, 480, 0, 480, 320, 0, 320)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 116, 36, 116, 36, 96, 72, 96, 72, 116, 116, 116, 116, 88, 136, 88, 136, 80, 152, 80, 152, 116, 196, 116, 196, 108, 268, 108, 268, 96, 288, 96, 288, 116, 316, 116, 316, 188, 0, 188)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(144, 244, 160, 244, 160, 260, 144, 260)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(312, 244, 296, 244, 296, 260, 312, 260)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(384, 180, 384, 164, 368, 164, 368, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-11, 238)
+shape = SubResource("RectangleShape2D_ht4rg")
+
+[node name="Bars" type="Node2D" parent="."]
+
+[node name="Bar" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(4, 192)
+
+[node name="Bar2" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(20, 192)
+
+[node name="Bar3" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(36, 192)
+
+[node name="Bar4" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(180, 192)
+
+[node name="Bar13" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(196, 192)
+
+[node name="Bar14" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(212, 192)
+
+[node name="Bar15" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(228, 192)
+
+[node name="Bar16" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(244, 192)
+
+[node name="Bar17" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(260, 192)
+
+[node name="Bar18" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(276, 192)
+
+[node name="Bar19" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(292, 192)
+
+[node name="Bar20" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(308, 192)
+
+[node name="Bar21" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(60, 40)
+
+[node name="Bar22" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(76, 40)
+
+[node name="Bar23" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(92, 40)
+
+[node name="Bar24" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(108, 40)
+
+[node name="Bar25" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(124, 40)
+
+[node name="Bar26" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(140, 40)
+
+[node name="Bar27" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(156, 40)
+
+[node name="Bar28" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(216, 40)
+
+[node name="Bar29" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(232, 40)
+
+[node name="Bar30" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(248, 40)
+
+[node name="Bar32" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(280, 40)
+
+[node name="Bar33" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(296, 40)
+
+[node name="Bar34" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(312, 40)
+
+[node name="Bar31" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(264, 40)
+
+[node name="Bar5" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(164, 192)
+
+[node name="Bar6" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(148, 192)
+
+[node name="Bar7" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(132, 192)
+
+[node name="Bar8" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(116, 192)
+
+[node name="Bar9" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(100, 192)
+
+[node name="Bar10" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(84, 192)
+
+[node name="Bar11" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(68, 192)
+
+[node name="Bar12" parent="Bars" instance=ExtResource("3_yea2p")]
+position = Vector2(52, 192)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_5tiu0")]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 320
+target = NodePath("../Player")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(480, 320)
+
+[node name="Ledges" type="Node2D" parent="."]
+
+[node name="Ledge" parent="Ledges" instance=ExtResource("5_gxf3g")]
+position = Vector2(360, 236)
+
+[node name="Ledge2" parent="Ledges" instance=ExtResource("5_gxf3g")]
+position = Vector2(384, 164)
+
+[node name="Ledge4" parent="Ledges" instance=ExtResource("5_gxf3g")]
+position = Vector2(368, 164)
+
+[node name="Ledge3" parent="Ledges" instance=ExtResource("5_gxf3g")]
+position = Vector2(316, 116)
+
+[node name="Guards" type="Node2D" parent="."]
+
+[node name="Guard" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("6_846g4")]
+position = Vector2(264, 288)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard"]
+
+[node name="Notch" parent="Guards/Guard/Notch Parent" instance=ExtResource("7_y2p6l")]
+position = Vector2(172, 288)
+pause = 5
+
+[node name="Notch2" parent="Guards/Guard/Notch Parent" instance=ExtResource("7_y2p6l")]
+position = Vector2(280, 288)
+pause = 5
+
+[node name="Guard2" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("6_846g4")]
+position = Vector2(404, 236)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard2"]
+
+[node name="Notch" parent="Guards/Guard2/Notch Parent" instance=ExtResource("7_y2p6l")]
+position = Vector2(376, 236)
+pause = 3
+
+[node name="Notch2" parent="Guards/Guard2/Notch Parent" instance=ExtResource("7_y2p6l")]
+position = Vector2(428, 236)
+pause = 3
+
+[node name="Guard3" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("6_846g4")]
+position = Vector2(232, 108)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard3"]
+
+[node name="Notch" parent="Guards/Guard3/Notch Parent" instance=ExtResource("7_y2p6l")]
+position = Vector2(208, 108)
+pause = 4
+
+[node name="Notch2" parent="Guards/Guard3/Notch Parent" instance=ExtResource("7_y2p6l")]
+position = Vector2(256, 108)
+pause = 4
+
+[node name="Guard4" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("6_846g4")]
+position = Vector2(96, 116)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard4"]
+
+[node name="Notch" parent="Guards/Guard4/Notch Parent" instance=ExtResource("7_y2p6l")]
+position = Vector2(84, 116)
+pause = 4
+
+[node name="Notch2" parent="Guards/Guard4/Notch Parent" instance=ExtResource("7_y2p6l")]
+position = Vector2(104, 116)
+pause = 4
+
+[node name="Goal" parent="." instance=ExtResource("8_c7owt")]
+position = Vector2(0, 80)
+next_level = ExtResource("9_kahxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(-11, -4)
+shape = SubResource("RectangleShape2D_jwtks")
+
+[node name="Music" parent="." instance=ExtResource("10_pag3m")]
+stream = ExtResource("11_23ewd")
+
+[node name="FadeIn" parent="." node_paths=PackedStringArray("goal", "music") instance=ExtResource("12_4mhxm")]
+visible = false
+goal = NodePath("../Goal")
+music = NodePath("../Music")
+
+[node name="Background" parent="." instance=ExtResource("13_p2enh")]
+offset_left = -80.0
+offset_top = -28.0
+offset_right = 520.0
+offset_bottom = 360.0

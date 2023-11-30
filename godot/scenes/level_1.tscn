@@ -1,0 +1,140 @@
+[gd_scene load_steps=15 format=3 uid="uid://kw603b4o6s7v"]
+
+[ext_resource type="Texture2D" uid="uid://37j3ktqxw87t" path="res://1.png" id="1_n1gtl"]
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="2_rreuh"]
+[ext_resource type="PackedScene" uid="uid://cqstuok25f6l" path="res://scenes/guard.tscn" id="3_lfvs3"]
+[ext_resource type="PackedScene" uid="uid://0gg8hkc4hjmp" path="res://scenes/notch.tscn" id="4_jexhd"]
+[ext_resource type="PackedScene" uid="uid://ba2oe8rq6sy5x" path="res://scenes/bar.tscn" id="5_4a037"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="6_rrrp4"]
+[ext_resource type="PackedScene" uid="uid://c2tbtwxc7sbvd" path="res://scenes/goal.tscn" id="7_i4v3i"]
+[ext_resource type="PackedScene" uid="uid://chkbpr4x6qmy" path="res://scenes/level_2.tscn" id="8_bc16t"]
+[ext_resource type="PackedScene" uid="uid://b4b0cc0lr4hqa" path="res://scenes/ledge.tscn" id="9_vsyu0"]
+[ext_resource type="PackedScene" uid="uid://bc3h2k0xq2aef" path="res://scenes/music.tscn" id="10_1ul1x"]
+[ext_resource type="AudioStream" uid="uid://c38f4f183m8as" path="res://music/level_1.wav" id="11_dpbdo"]
+[ext_resource type="PackedScene" uid="uid://s25e2po7gv1i" path="res://scenes/fade_in.tscn" id="12_3qrfj"]
+[ext_resource type="PackedScene" uid="uid://ctrr821kfyhud" path="res://scenes/background.tscn" id="13_kpe05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ccbn"]
+size = Vector2(42, 80)
+
+[node name="Level1" type="Node2D"]
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_n1gtl")
+
+[node name="Player" parent="." instance=ExtResource("2_rreuh")]
+z_index = -1
+position = Vector2(360, 288)
+
+[node name="Guards" type="Node2D" parent="."]
+
+[node name="Guard" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("3_lfvs3")]
+z_index = -1
+position = Vector2(244, 288)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard"]
+
+[node name="Notch2" parent="Guards/Guard/Notch Parent" instance=ExtResource("4_jexhd")]
+position = Vector2(184, 288)
+pause = 5
+
+[node name="Notch" parent="Guards/Guard/Notch Parent" instance=ExtResource("4_jexhd")]
+position = Vector2(296, 288)
+pause = 5
+
+[node name="Guard2" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("3_lfvs3")]
+position = Vector2(68, 192)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard2"]
+
+[node name="Notch2" parent="Guards/Guard2/Notch Parent" instance=ExtResource("4_jexhd")]
+position = Vector2(84, 192)
+pause = 5
+
+[node name="Notch" parent="Guards/Guard2/Notch Parent" instance=ExtResource("4_jexhd")]
+position = Vector2(52, 192)
+pause = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(240, 160)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(240, -48, 144, -48, 144, 0, 220, -16, 220, 0, 96, 0, 160, 28, 96, 0, 96, -16, 80, -16, 80, 0, -64, 0, -64, -16, -80, -16, -80, 32, 220, 32, 220, 80, 192, 80, 192, 108, 160, 108, 160, 128, 80, 128, 80, 92, 64, 92, 64, 128, -64, 128, -80, 128, -104, 128, -104, 84, -136, 84, -136, 124, -208, 128, -208, 64, -144, 64, -144, 32, -200, 32, -200, 8, -212, 8, -212, -8, -224, -8, -224, -100, -212, -100, -212, -112, -204, -112, -204, -128, 240, -128, 240, -160, -240, -160, -240, 160, 240, 160)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-80, 92, -64, 92, -64, 128, -80, 128)
+
+[node name="Bars" type="Node2D" parent="."]
+
+[node name="Bar" parent="Bars" instance=ExtResource("5_4a037")]
+position = Vector2(184, 196)
+
+[node name="Bar2" parent="Bars" instance=ExtResource("5_4a037")]
+position = Vector2(200, 196)
+
+[node name="Bar3" parent="Bars" instance=ExtResource("5_4a037")]
+position = Vector2(216, 196)
+
+[node name="Bar4" parent="Bars" instance=ExtResource("5_4a037")]
+position = Vector2(232, 196)
+
+[node name="Bar5" parent="Bars" instance=ExtResource("5_4a037")]
+position = Vector2(248, 196)
+
+[node name="Bar6" parent="Bars" instance=ExtResource("5_4a037")]
+position = Vector2(264, 196)
+
+[node name="Bar7" parent="Bars" instance=ExtResource("5_4a037")]
+position = Vector2(280, 196)
+
+[node name="Bar8" parent="Bars" instance=ExtResource("5_4a037")]
+position = Vector2(296, 196)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_rrrp4")]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 320
+target = NodePath("../Player")
+
+[node name="Goal" parent="." instance=ExtResource("7_i4v3i")]
+position = Vector2(480, 72)
+next_level = ExtResource("8_bc16t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(11, 0)
+shape = SubResource("RectangleShape2D_4ccbn")
+
+[node name="Ledges" type="Node" parent="."]
+
+[node name="Ledge" parent="Ledges" instance=ExtResource("9_vsyu0")]
+position = Vector2(96, 192)
+
+[node name="Ledge2" parent="Ledges" instance=ExtResource("9_vsyu0")]
+position = Vector2(136, 244)
+
+[node name="Ledge3" parent="Ledges" instance=ExtResource("9_vsyu0")]
+position = Vector2(104, 244)
+
+[node name="Ledge4" parent="Ledges" instance=ExtResource("9_vsyu0")]
+position = Vector2(160, 144)
+
+[node name="Ledge5" parent="Ledges" instance=ExtResource("9_vsyu0")]
+position = Vector2(384, 112)
+
+[node name="Music" parent="." instance=ExtResource("10_1ul1x")]
+stream = ExtResource("11_dpbdo")
+
+[node name="FadeIn" parent="." node_paths=PackedStringArray("goal", "music") instance=ExtResource("12_3qrfj")]
+visible = false
+goal = NodePath("../Goal")
+music = NodePath("../Music")
+
+[node name="Background" parent="." instance=ExtResource("13_kpe05")]
+offset_left = -28.0
+offset_top = -20.0
+offset_right = 504.0
+offset_bottom = 340.0

@@ -1,0 +1,218 @@
+[gd_scene load_steps=20 format=3 uid="uid://c5q3gx2yyj3js"]
+
+[ext_resource type="Texture2D" uid="uid://bjq5x7p02w2d3" path="res://5.png" id="1_q1h01"]
+[ext_resource type="PackedScene" uid="uid://b3fgv0hwfpkek" path="res://scenes/player.tscn" id="2_xhtnm"]
+[ext_resource type="PackedScene" uid="uid://dpqviulxihbj" path="res://scenes/cam.tscn" id="3_x54lm"]
+[ext_resource type="PackedScene" uid="uid://b4b0cc0lr4hqa" path="res://scenes/ledge.tscn" id="4_lfuue"]
+[ext_resource type="PackedScene" uid="uid://c1a4n57ue4uy4" path="res://scenes/ladder.tscn" id="5_wvw4x"]
+[ext_resource type="PackedScene" uid="uid://vf2mye7jyc0m" path="res://scenes/conveyor.tscn" id="6_xpa38"]
+[ext_resource type="PackedScene" uid="uid://cqstuok25f6l" path="res://scenes/guard.tscn" id="7_l47on"]
+[ext_resource type="PackedScene" uid="uid://0gg8hkc4hjmp" path="res://scenes/notch.tscn" id="8_oy6pn"]
+[ext_resource type="PackedScene" uid="uid://bc3h2k0xq2aef" path="res://scenes/music.tscn" id="9_yvts5"]
+[ext_resource type="AudioStream" uid="uid://0lm8c01acvjs" path="res://music/level_5.wav" id="10_xueey"]
+[ext_resource type="PackedScene" uid="uid://s25e2po7gv1i" path="res://scenes/fade_in.tscn" id="11_pxkm8"]
+[ext_resource type="PackedScene" uid="uid://c2tbtwxc7sbvd" path="res://scenes/goal.tscn" id="13_8gmqn"]
+[ext_resource type="PackedScene" uid="uid://dsjsxv0rya8pk" path="res://scenes/level_6.tscn" id="13_mrdwc"]
+[ext_resource type="PackedScene" uid="uid://ctrr821kfyhud" path="res://scenes/background.tscn" id="13_prr6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojgxq"]
+size = Vector2(78, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3g4r"]
+size = Vector2(16, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qwij"]
+size = Vector2(72, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_403df"]
+size = Vector2(36, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pphek"]
+size = Vector2(78, 68)
+
+[node name="level5" type="Node2D"]
+
+[node name="5" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_q1h01")
+
+[node name="Player" parent="." instance=ExtResource("2_xhtnm")]
+position = Vector2(440, 284)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_x54lm")]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 320
+target = NodePath("../Player")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(480, 320, 480, 284, 396, 284, 396, 216, 360, 216, 324, 216, 324, 284, 180, 284, 180, 180, 108, 180, 108, 212, 72, 212, 72, 284, 0, 284, 0, 320)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 216, 8, 216, 8, 144, 48, 144, 48, 108, 8, 108, 8, 56, 16, 44, 96, 36, 376, 36, 420, 48, 432, 80, 432, 96, 444, 124, 444, 160, 400, 160, 400, 180, 480, 180, 480, 0, 0, 0)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(108, 144, 144, 144, 144, 84, 108, 84)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(288, 172, 288, 216, 216, 216, 216, 172)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(517, 230)
+shape = SubResource("RectangleShape2D_ojgxq")
+
+[node name="Ledges" type="Node2D" parent="."]
+
+[node name="Ledge" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(396, 224)
+
+[node name="Ledge2" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(324, 224)
+
+[node name="Ledge3" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(288, 180)
+
+[node name="Ledge4" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(216, 180)
+
+[node name="Ledge5" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(180, 180)
+
+[node name="Ledge6" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(400, 160)
+
+[node name="Ledge7" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(144, 92)
+
+[node name="Ledge8" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(108, 92)
+
+[node name="Ledge10" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(108, 180)
+
+[node name="Ledge11" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(72, 220)
+
+[node name="Ledge9" parent="Ledges" instance=ExtResource("4_lfuue")]
+position = Vector2(48, 108)
+
+[node name="Ladder" parent="." instance=ExtResource("5_wvw4x")]
+position = Vector2(160, 156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_k3g4r")
+
+[node name="Conveyers" type="Node2D" parent="."]
+
+[node name="Conveyor" parent="Conveyers" instance=ExtResource("6_xpa38")]
+speed = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor"]
+position = Vector2(360, 216)
+shape = SubResource("RectangleShape2D_4qwij")
+
+[node name="Conveyor2" parent="Conveyers" instance=ExtResource("6_xpa38")]
+position = Vector2(-108, -44)
+direction = 1
+speed = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor2"]
+position = Vector2(360, 216)
+shape = SubResource("RectangleShape2D_4qwij")
+
+[node name="Conveyor4" parent="Conveyers" instance=ExtResource("6_xpa38")]
+speed = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor4"]
+position = Vector2(126, 85)
+shape = SubResource("RectangleShape2D_403df")
+
+[node name="Conveyor5" parent="Conveyers" instance=ExtResource("6_xpa38")]
+position = Vector2(-36, 128)
+speed = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyers/Conveyor5"]
+position = Vector2(126, 85)
+shape = SubResource("RectangleShape2D_403df")
+
+[node name="Guards" type="Node2D" parent="."]
+
+[node name="Guard" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("7_l47on")]
+position = Vector2(224, 284)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard"]
+
+[node name="Notch" parent="Guards/Guard/Notch Parent" instance=ExtResource("8_oy6pn")]
+position = Vector2(192, 284)
+pause = 5
+
+[node name="Notch2" parent="Guards/Guard/Notch Parent" instance=ExtResource("8_oy6pn")]
+position = Vector2(308, 284)
+pause = 5
+
+[node name="Guard2" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("7_l47on")]
+position = Vector2(424, 160)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard2"]
+
+[node name="Notch" parent="Guards/Guard2/Notch Parent" instance=ExtResource("8_oy6pn")]
+position = Vector2(408, 160)
+pause = 2
+
+[node name="Notch2" parent="Guards/Guard2/Notch Parent" instance=ExtResource("8_oy6pn")]
+position = Vector2(436, 160)
+pause = 4
+
+[node name="Guard3" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("7_l47on")]
+position = Vector2(132, 180)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard3"]
+
+[node name="Notch" parent="Guards/Guard3/Notch Parent" instance=ExtResource("8_oy6pn")]
+position = Vector2(120, 180)
+pause = 3
+
+[node name="Notch2" parent="Guards/Guard3/Notch Parent" instance=ExtResource("8_oy6pn")]
+position = Vector2(168, 180)
+pause = 4
+
+[node name="Guard4" parent="Guards" node_paths=PackedStringArray("notch_parent") instance=ExtResource("7_l47on")]
+position = Vector2(28, 108)
+notch_parent = NodePath("Notch Parent")
+
+[node name="Notch Parent" type="Node" parent="Guards/Guard4"]
+
+[node name="Notch" parent="Guards/Guard4/Notch Parent" instance=ExtResource("8_oy6pn")]
+position = Vector2(36, 108)
+pause = 2
+
+[node name="Notch2" parent="Guards/Guard4/Notch Parent" instance=ExtResource("8_oy6pn")]
+position = Vector2(16, 108)
+pause = 4
+
+[node name="Music" parent="." instance=ExtResource("9_yvts5")]
+stream = ExtResource("10_xueey")
+
+[node name="Background" parent="." instance=ExtResource("13_prr6p")]
+offset_top = -16.0
+offset_right = 504.0
+
+[node name="Goal" parent="." instance=ExtResource("13_8gmqn")]
+position = Vector2(0, 256)
+next_level = ExtResource("13_mrdwc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(-29, -6)
+shape = SubResource("RectangleShape2D_pphek")
+
+[node name="FadeIn2" parent="." node_paths=PackedStringArray("goal", "music") instance=ExtResource("11_pxkm8")]
+visible = false
+goal = NodePath("../Goal")
+music = NodePath("../Music")
